@@ -1,15 +1,22 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue";
+import Vuex from "vuex";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
+  state() {
+    return {
+      dialog: true,
+    };
   },
   mutations: {
+    openDialog(state) {
+      state.dialog = !state.dialog;
+    },
   },
-  actions: {
+  actions: {},
+  modules: {},
+  getters: {
+    theDialog: (state) => state.dialog,
   },
-  modules: {
-  }
-})
+});
